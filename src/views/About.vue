@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>我是关于我们</h1>
+    <h1>我是关于我们,test</h1>
     <test-area/>
   </div>
 </template>
