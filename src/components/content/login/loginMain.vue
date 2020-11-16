@@ -8,7 +8,7 @@
     <register-div id="loginword" placeholder="密码" :error-text="loginword_errorText"
                   :is-show=loginwordError @onfocus="loginword_onfocus" @onblur="loginword_onblur"/>
 
-    <input type="submit" class="ensure" value="确定" @click.prevent="">
+    <input type="submit" class="ensure" value="确定" @click.prevent="yanzheng" :disabled=canClick>
   </div>
 </template>
 
@@ -24,9 +24,15 @@ export default {
 
       loginname_errorText: '用户名不能为空啊喂',
       loginword_errorText: '密码不合格',
+
+      canClick: true,
     }
   },
   methods: {
+    //提交并返回验证
+    yanzheng() {
+
+    },
     //用户名 一栏的合法性检测
     loginname_onblur(value) {
       let name = value;
@@ -102,5 +108,8 @@ export default {
     line-height: 42px;
     color: white;
     background-color: #ff552e;
+  }
+  .ensure:hover {
+    cursor: pointer;
   }
 </style>

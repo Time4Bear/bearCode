@@ -18,7 +18,7 @@
       <a href="#" @click="toAbout">《abababa》协议</a>
     </div>
     <!--“注册”-->
-    <input type="submit" class="ensure" value="确定" @click.prevent="">
+    <input type="submit" class="ensure" value="确定" @click.prevent="tijiao" :disabled=canClick>
   </div>
 </template>
 
@@ -40,9 +40,15 @@ export default {
       email_errorText: '邮箱格式不对啊喂',
 
       password: String,
+
+      canClick: true,
     }
   },
   methods: {
+    //验证正确性，然后提交信息
+    tijiao() {
+
+    },
     //用户名 一栏的合法性检测
     username_onblur(value) {
       let name = value;
@@ -174,5 +180,8 @@ export default {
     line-height: 42px;
     color: white;
     background-color: #ff552e;
+  }
+  .ensure:hover {
+    cursor: pointer;
   }
 </style>
